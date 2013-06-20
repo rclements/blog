@@ -1,28 +1,51 @@
 Resources:
+
 www.rubymonk.com
+
 http://www.codeschool.com/courses/rails-for-zombies-redux
 
 
 
 Starting a new (empty) Rails Project
+
 # cd into rails applications directory
+
 cd /rails
+
 mkdir testapp
+
 cd testapp
+
 vim .rvmrc
+
 # inside .rvmrc
+
 rvm use 1.9.3@testapp --create
+
 cd ../
+
 cd testapp
+
 # you’re now using your .rvmrc
+
 gem install rails
+
 rails new .
+
 # change to mysql
+
 vim config/database.yml
+
 vim Gemfile
+
 # change sqlite3 to mysql2
+
 bundle
+
 rake db:create db:migrate
+
 rails server
+
 # in browser visit http://localhost:3000
+
 # yeah boy you done real good ridin on rails and stuff
