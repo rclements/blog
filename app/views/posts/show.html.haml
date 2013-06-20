@@ -1,6 +1,8 @@
 %h1= @post.title
 
 %p= @post.body
+- if @post.image.present?
+  = image_tag @post.image.thumb('400x200#').url
 
 = link_to 'Edit Post', edit_post_path
 = link_to 'Destroy Post', post_path(@post), :method => :delete

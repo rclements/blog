@@ -1,4 +1,12 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!, :except => ['index', 'show']
+  before_filter :redirect_unless_admin, :except => ['index', 'show']
+
+  def redirect_unless_admin
+    unless current_user.admin?
+      redirect_to posts_path
+    end
+  end
 
   def index
     @posts = Post.all

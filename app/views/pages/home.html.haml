@@ -1,0 +1,5 @@
+%h1 Home
+
+- Post.all.each do |post|
+  = "#{post.title} - #{post.body}"
+  %br

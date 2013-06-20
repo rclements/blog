@@ -1,6 +1,11 @@
 Blog::Application.routes.draw do
+  devise_for :users
+
+  resources :high_scores
+
   resources :posts
-  root :to => 'posts#index'
+  root :to => 'pages#home'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
